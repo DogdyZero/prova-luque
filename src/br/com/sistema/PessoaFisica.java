@@ -6,16 +6,24 @@ import br.com.sistema.util.Tipo;
 @Tipo("cliente")
 public class PessoaFisica {
 	
-	@Atributo ("RG")
-	private RG[] rg;
+    private String nome;
+    private RG[] rg;
 
-	public RG[] getRg() {
-		return rg;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public void setRg(RG[] rg) {
-		this.rg = rg;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public RG[] getRg() {
+        return rg;
+    }
+
+    public void setRg(RG[] rg) {
+        this.rg = rg;
+    }
 	
 	
 }
