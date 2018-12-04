@@ -6,16 +6,25 @@ import br.com.sistema.util.Tipo;
 @Tipo("cliente")
 public class Cliente extends PessoaFisica{
 	
-	@Atributo ("numero")
-	private String nome;
 
-	public String getNome() {
-		return nome;
-	}
+    private String numeroCliente;
+    private Date clienteDesde;
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public String getNumeroCliente() {
+        return numeroCliente;
+    }
+
+    public void setNumeroCliente(String numeroCliente) {
+        this.numeroCliente = numeroCliente;
+    }
+
+    public Date getClienteDesde() {
+        return clienteDesde;
+    }
+
+    public void setClienteDesde(Date clienteDesde) {
+        this.clienteDesde = clienteDesde;
+    }
 	
 	
 }
