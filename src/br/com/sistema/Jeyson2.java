@@ -74,20 +74,21 @@ public class Jeyson2 {
 		return false;
 	}
 	
-	private void verificarObjeto(Field[] campos) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
+		private void verificarObjeto(Field[] campos) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
 		Class<?> classeFilha =(Class<?>)this.tipoAtributo;
 		sb.append(":{");
 		Field[] ff = classeFilha.getDeclaredFields();
+		obj = this.valorAtributo;
 		for(Field campoFilha: ff ) {
 			this.nomeAtributo= campoFilha.getName();
 			campoFilha.setAccessible(true);
 			campoFilha.get(this.valorAtributo);
-			//if(!verificarTiposCompostos(ff))
-				System.out.println("\""+campoFilha.getName()+"\" :"+"\""+campoFilha.get(this.valorAtributo)+"\",");
+			this.tipoAtributo = campoFilha.getType();
+			if(!verificarTiposCompostos(ff))
+				System.out.println("\""+campoFilha.getName()+"\" :"+"\""+campoFilha.get(obj)+"\",");
 
 		}
 	}
-
 	public void verificarArray(Field[] campos) throws IllegalArgumentException, IllegalAccessException, ClassNotFoundException {
 		
 		for (Object obj : (Object[]) this.valorAtributo)
