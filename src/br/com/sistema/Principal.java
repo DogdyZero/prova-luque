@@ -2,37 +2,40 @@ package br.com.sistema;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Principal {
 
 	public static void main(String[] args) throws ClassNotFoundException, IOException, IllegalArgumentException, IllegalAccessException {
-		Cliente cli = new Cliente();
-		cli.setNome("Ricardo");
-		RG rg = new RG();
-		rg.setNumero("123456");
-		RG[] rgs = new RG[10];
-		rgs[0] = rg;
-		cli.setRg(rgs);
-		RG rg2 = new RG();
-		
-		RG[] rgs2 = new RG[10];
-		rg2.setNumero("123456");
-		rgs2[0] = rg2;
-		rg2.setNumero("452636");
-		rgs2[1] = rg2;
+		Estado estadoDoRG1 = new Estado();
+        estadoDoRG1.setSigla("SP");
+        estadoDoRG1.setNome("Sao Paulo");
 
-		Cliente cli2 = new Cliente();
-		cli2.setNome("Rodrigo");
-		
-		cli2.setRg(rgs2);
-		List<Cliente> listaClientes = new ArrayList<Cliente>();
-		listaClientes.add(cli);
-		listaClientes.add(cli2);
-		
-		Json json = new Json();
-		System.out.println(json.geradorJson(cli2));
+        RG rgDoCliente1 = new RG();
+        rgDoCliente1.setNumero("123.456.789");
+        rgDoCliente1.setOrgaoExpeditor("SSP");
+        rgDoCliente1.setEstadoExpeditor(estadoDoRG1);
 
+        Estado estadoDoRG2 = new Estado();
+        estadoDoRG2.setSigla("MG");
+        estadoDoRG2.setNome("Minas Gerais");
+
+        RG rgDoCliente2 = new RG();
+        rgDoCliente2.setNumero("123.456.780");
+        rgDoCliente2.setOrgaoExpeditor("SSP");
+        rgDoCliente2.setEstadoExpeditor(estadoDoRG2);
+
+        Cliente cli = new Cliente();
+        cli.setNome("Joao da Silva");
+        cli.setNumeroCliente("12345");
+        cli.setClienteDesde(new Date());
+        cli.setRg(new RG[]{rgDoCliente1, rgDoCliente2});
+		
+		//Jeyzon json = new Jeyzon();
+		//System.out.println(json.geradorJson(cli));
+        Jeyson2 json = new Jeyson2();
+        json.toString(cli);
 	}
 
 }

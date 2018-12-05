@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.Field;
 
 
-public class Json {
+public class Jeyzon {
 	public String geradorJson(Cliente clientes) throws ClassNotFoundException, IOException, IllegalArgumentException, IllegalAccessException {
 		
 		StringBuilder sb = new StringBuilder();

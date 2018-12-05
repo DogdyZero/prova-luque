@@ -1,9 +1,5 @@
 package br.com.sistema;
 
-import br.com.sistema.util.Atributo;
-import br.com.sistema.util.Tipo;
-
-@Tipo("cliente")
 public class RG {
 	
     private String numero;

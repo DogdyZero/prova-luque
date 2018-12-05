@@ -1,12 +1,9 @@
 package br.com.sistema;
 
-import br.com.sistema.util.Atributo;
-import br.com.sistema.util.Tipo;
+import java.util.Date;
 
-@Tipo("cliente")
 public class Cliente extends PessoaFisica{
 	
-
     private String numeroCliente;
     private Date clienteDesde;
 
