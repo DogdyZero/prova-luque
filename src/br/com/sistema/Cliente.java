@@ -5,6 +5,7 @@ import java.util.Date;
 public class Cliente extends PessoaFisica{
 	
     private String numeroCliente;
+    @Formate 
     private Date clienteDesde;
 
     public String getNumeroCliente() {

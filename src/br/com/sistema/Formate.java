@@ -1,3 +1,4 @@
+package br.com.sistema;
 
 
 import java.lang.annotation.ElementType;
@@ -7,6 +8,8 @@ import java.lang.annotation.Target;
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface IgnoreJeyzon {
+public @interface Formate {
+
+    public String padrao() default "dd/MM/yyyy";
 
 }

@@ -32,10 +32,8 @@ public class Principal {
         cli.setClienteDesde(new Date());
         cli.setRg(new RG[]{rgDoCliente1, rgDoCliente2});
 		
-		//Jeyzon json = new Jeyzon();
-		//System.out.println(json.geradorJson(cli));
-        Jeyson2 json = new Jeyson2();
-        json.toString(cli);
+        Jeyson json = new Jeyson();
+        System.out.println(json.toString(cli));
 	}
 
 }
